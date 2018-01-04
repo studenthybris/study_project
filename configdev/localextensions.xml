@@ -23,6 +23,10 @@
 		<extension name="trainingtest" />
 		
 		<extension name="mytraining" />
+		
+		<extension name="mytraininghmc" />
+		
+		<extension name="hmc" />
 
 										
 		<!-- ext-platform -->
