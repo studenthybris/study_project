@@ -417,4 +417,9 @@
 		<property name="rootCategoryCode" value="categories"/>
 	</bean>
 	
+	<!--  dao   -->
+	
+	<bean id="customerDao" class="com.epam.training.core.dao.impl.CustomerDaoImpl" />
+	
+	
 </beans>

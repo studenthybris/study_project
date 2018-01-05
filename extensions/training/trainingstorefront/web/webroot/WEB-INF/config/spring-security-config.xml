@@ -239,12 +239,13 @@
    </bean>
 
 	<!-- Login Failure Handlers -->
-    <bean id="bruteForceAttackCounter" class="com.epam.training.storefront.security.impl.DefaultBruteForceAttackCounter">
+<!--    
+ 	<bean id="bruteForceAttackCounter" class="com.epam.training.storefront.security.impl.DefaultBruteForceAttackCounter">
         <constructor-arg name="maxFailedLogins" value="5" />
         <constructor-arg name="cacheExpiration" value="60" />
         <constructor-arg name="cacheSizeLimit" value="1000" />
     </bean>
-
+-->
 	<bean id="loginAuthenticationFailureHandler" class="com.epam.training.storefront.security.LoginAuthenticationFailureHandler" >
         <property name="bruteForceAttackCounter" ref="bruteForceAttackCounter" />
 		<property name="defaultFailureUrl" value="/login?error=true"/>
@@ -296,5 +297,8 @@
 	<bean id="rememberMeAuthenticationProvider" class="org.springframework.security.authentication.RememberMeAuthenticationProvider" >
 		<property name="key" value="trainingstorefront"/>
 	</bean>
+
+	<alias name="bruteForceAttackCounter" alias="myBruteForceAttackCounter"/>
+	<bean id="bruteForceAttackCounter" class="com.epam.training.storefront.util.AttackHandler" />
 
 </beans>
