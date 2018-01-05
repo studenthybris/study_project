@@ -80,6 +80,7 @@
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
 	
+	<bean id="handler" class="com.epam.training.Handler" />
 			
 			
 </beans>
