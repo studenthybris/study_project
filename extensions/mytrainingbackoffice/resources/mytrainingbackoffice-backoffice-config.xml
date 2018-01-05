@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  ~ [y] hybris Platform
+  ~
+  ~ Copyright (c) 2000-2015 hybris AG
+  ~ All rights reserved.
+  ~
+  ~ This software is the confidential and proprietary information of hybris
+  ~ ("Confidential Information"). You shall not disclose such Confidential
+  ~ Information and shall use it only in accordance with the terms of the
+  ~ license agreement you entered into with hybris.
+  -->
+
+<config xmlns="http://www.hybris.com/cockpit/config">
+
+	<context component="explorer-tree" merge-by="module" >
+  		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+        		<n:navigation-node id="Organizations">
+            		<n:type-node id="Organizations" code="Organization" />
+        		</n:navigation-node>
+        		<n:navigation-node id="Customers">
+            		<n:type-node id="Customers" code="Customer" />
+        		</n:navigation-node>
+    		</n:explorer-tree>
+	</context>
+	
+	<context type="Organization" component="listview">
+   		 <list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
+        		<list:column qualifier="id"/>
+        		<list:column qualifier="name"/>
+        		<list:column qualifier="phone"/>
+        		<list:column qualifier="email"/>
+    		</list:list-view>
+	</context>
+	
+	<context type="Organization" component="simple-search">
+    		<yss:simple-search xmlns:yss="http://www.hybris.com/cockpitng/config/simplesearch">
+        		<yss:field name="phone"/>
+        		<yss:sort-field name="phone" asc="true"/>
+    		</yss:simple-search>
+	</context>
+	
+	<context type="Organization" component="advanced-search">
+    		<as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
+        		<as:field-list>
+            		<as:field name="name" operator="contains" selected="true"/>
+            		<as:field name="phone" selected="true"/>
+            		<as:field editor="java.lang.Long" name="pk" operator="equal" selected="false" sortable="false"/>
+        		</as:field-list>
+      		<as:sort-field name="phone" asc="false" />
+    		</as:advanced-search>
+	</context>
+	
+	<context component="editor-area" type="Organization">
+    <editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
+        <editorArea:tab name="essentials">
+            <editorArea:section name="essentials">
+                <editorArea:attribute qualifier="id"/>
+                <editorArea:attribute qualifier="name"/>
+            </editorArea:section>
+            <editorArea:section name="data">
+                <editorArea:attribute qualifier="phone"/>
+                <editorArea:attribute qualifier="email"/>
+            </editorArea:section>
+        </editorArea:tab>
+    </editorArea:editorArea>
+	</context>
+	
+	<context component="create-wizard" type="Organization">
+    <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="OrganizationWizard" >
+        <wz:prepare id="organizationPrepare">
+             <wz:initialize property="newOrganization" type="Organization"/>
+        </wz:prepare>
+        <wz:step id="step1" label="create.organization.general.label">
+            <wz:content id="step1.content">
+                <wz:property-list root="newOrganization">
+                    <wz:property qualifier="id"/>
+                    <wz:property qualifier="name"/>
+                    <wz:property qualifier="phone"/>
+                    <wz:property qualifier="email"/>
+                </wz:property-list>
+            </wz:content>
+            <wz:navigation id="step1.navigation">
+                <wz:cancel/>
+                <wz:done>
+                    <wz:save property="newOrganization"/>
+                </wz:done>
+            </wz:navigation>
+        </wz:step>
+    </wz:flow>
+	</context>
+		
+	<context type="Customer" component="listview">
+   		 <list:list-view xmlns:list="http://www.hybris.com/cockpitng/component/listView">
+        		<list:column qualifier="customerID"/>
+        		<list:column qualifier="name"/>
+        		<list:column qualifier="status"/>
+        		<list:column qualifier="uid"/>
+    		</list:list-view>
+	</context>
+	
+	<context type="Customer" component="simple-search">
+    		<yss:simple-search xmlns:yss="http://www.hybris.com/cockpitng/config/simplesearch">
+        		<yss:field name="name"/>
+        		<yss:sort-field name="name" asc="true"/>
+    		</yss:simple-search>
+	</context>
+	
+	<context type="Customer" component="advanced-search">
+    		<as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
+        		<as:field-list>
+            		<as:field name="name" operator="contains" selected="true"/>
+            		<as:field name="status" selected="true"/>
+            		<as:field editor="java.lang.Long" name="pk" operator="equal" selected="false" sortable="false"/>
+        		</as:field-list>
+      		<as:sort-field name="phone" asc="false" />
+    		</as:advanced-search>
+	</context>
+	
+	<context component="editor-area" type="Customer">
+    <editorArea:editorArea xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea">
+        <editorArea:tab name="essentials">
+            <editorArea:section name="essentials">
+                <editorArea:attribute qualifier="customerID"/>
+                <editorArea:attribute qualifier="name"/>
+            </editorArea:section>
+            <editorArea:section name="data">
+                <editorArea:attribute qualifier="status"/>
+                <editorArea:attribute qualifier="uid"/>
+            </editorArea:section>
+        </editorArea:tab>
+    </editorArea:editorArea>
+	</context>
+	
+	<context component="create-wizard" type="Customer">
+    <wz:flow xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config" id="CustomerWizard" >
+        <wz:prepare id="customerPrepare">
+             <wz:initialize property="newCustomer" type="Customer"/>
+        </wz:prepare>
+        <wz:step id="step1" label="create.customer.general.label">
+            <wz:content id="step1.content">
+                <wz:property-list root="newCustomer">
+                    <wz:property qualifier="customerID"/>
+                    <wz:property qualifier="name"/>
+                    <wz:property qualifier="status"/>
+                    <wz:property qualifier="uid"/>
+                </wz:property-list>
+            </wz:content>
+            <wz:navigation id="step1.navigation">
+                <wz:cancel/>
+                <wz:done>
+                    <wz:save property="newCustomer"/>
+                </wz:done>
+            </wz:navigation>
+        </wz:step>
+    </wz:flow>
+	</context>
+		
+</config>
