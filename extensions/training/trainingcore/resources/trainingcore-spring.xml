@@ -421,5 +421,13 @@
 	
 	<bean id="customerDao" class="com.epam.training.core.dao.impl.CustomerDaoImpl" />
 	
+	<bean id="organizationDao" class="com.epam.training.core.dao.impl.OrganizationDaoImpl" />
+	
+	
+	<!-- service -->
+	
+	<bean id="organizationService" class="com.epam.training.core.service.impl.OrganizationServiceImpl" />
+	
+		
 	
 </beans>

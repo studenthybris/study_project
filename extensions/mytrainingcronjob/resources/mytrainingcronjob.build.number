@@ -1,0 +1,8 @@
+#Ant properties
+#Fri Nov 20 10:51:16 CET 2015
+builddate=20151120 1051
+description=mytrainingcronjob
+name=mytrainingcronjob
+vendor=hybris
+version=5.5.1.6
+version.api=5.5.1
