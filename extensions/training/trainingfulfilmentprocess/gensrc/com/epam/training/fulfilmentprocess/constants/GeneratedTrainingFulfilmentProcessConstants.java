@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jan 16, 2018 11:26:38 AM                    ---
+ * --- Generated at Jan 17, 2018 12:13:00 PM                    ---
  * ----------------------------------------------------------------
  */
 package com.epam.training.fulfilmentprocess.constants;
