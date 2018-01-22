@@ -82,5 +82,16 @@
 	
 	<bean id="handler" class="com.epam.training.Handler" />
 			
+
+	<bean id="customerCountInterceptor" class="com.epam.training.interceptor.CustomerCountInterceptor" />	
+			
+	<bean id="customerCountInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="customerCountInterceptor"/>
+		<property name="typeCode" value="Customer"/>
+	</bean>
+			
+	<bean id="customerCountEventListener" class="com.epam.training.event.CustomersCountEventListener" />
+	
+			
 			
 </beans>
