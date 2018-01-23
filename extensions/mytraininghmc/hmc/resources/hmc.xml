@@ -5,8 +5,11 @@
  
     <!-- Configuration for extension myTraining -->
     <explorertree>
-        <group name="Organizationsgroup">
+        <group name="OrganizationsGroup">
             <typeref type="Organization"/>
+        </group>
+        <group name="SupplierGroup">
+        	<typeref type="Supplier"/>
         </group>
     </explorertree>
  
@@ -50,4 +53,44 @@
             </editor>
         </organizer>
     </type>
+     
+    <type name="Supplier" mode="append">
+            <organizer>
+            <search mode="replace">
+                <condition attribute="id"/>
+                <condition attribute="name"/>
+                <condition attribute="catalogVersion"/>
+            </search>
+            <result>
+                <listview mode="replace">
+                    <itemlayout>
+                        <attribute name="id"  />
+                        <attribute name="name"   />
+                        <attribute name="catalogVersion" />
+                    </itemlayout>
+                </listview>
+            </result>
+            <editor>
+                <essentials>
+                    <listlayout>
+                        <attribute name="id"/>
+                        <attribute name="name"/>
+                        <attribute name="catalogVersion"/>
+                    </listlayout>
+                </essentials>
+                <tab name="tab.supplier">
+                    <section name="section.mytraining">
+                        <listlayout>
+                            <attribute name="id"/>
+                        	<attribute name="name"/>
+                        	<attribute name="catalogVersion"/>
+                        </listlayout>
+                    </section>
+                </tab>
+            </editor>
+        </organizer>
+    </type>
+    
+    
+    
 </configuration>

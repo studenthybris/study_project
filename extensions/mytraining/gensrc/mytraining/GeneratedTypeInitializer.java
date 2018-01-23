@@ -47,6 +47,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 	
 		createItemType(
+			"Supplier",
+			"GenericItem",
+			com.epam.training.jalo.Supplier.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
+		createItemType(
 			"Organization",
 			"GenericItem",
 			com.epam.training.jalo.Organization.class,
@@ -75,6 +85,12 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	
 	
+				single_createattr_Supplier_id();
+			
+				single_createattr_Supplier_catalogVersion();
+			
+				single_createattr_Supplier_name();
+			
 				single_createattr_Customer_status();
 			
 				single_createattr_Customer_attemptCount();
@@ -112,6 +128,57 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	}
 
+	
+	public void single_createattr_Supplier_id() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Supplier", 
+					"id",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.INITIAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Supplier_catalogVersion() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Supplier", 
+					"catalogVersion",  
+					null,
+					"CatalogVersion",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.INITIAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Supplier_name() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Supplier", 
+					"name",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
 	
 	public void single_createattr_Customer_status() throws JaloBusinessException
 	{
@@ -261,6 +328,31 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				{
 				Map customPropsMap = new HashMap();
 				
+					customPropsMap.put( "catalogItemType", java.lang.Boolean.TRUE );
+				
+					customPropsMap.put( "catalogVersionAttributeQualifier", "catalogVersion" );
+				
+					customPropsMap.put( "uniqueKeyAttributeQualifier", "id" );
+				
+				setItemTypeProperties(
+					"Supplier",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Supplier_id();
+		
+			single_setAttributeProperties_Supplier_catalogVersion();
+		
+			single_setAttributeProperties_Supplier_name();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
 				changeMetaType(
 					"Customer",
 					null,
@@ -299,6 +391,72 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 
 		
+						public void single_setAttributeProperties_Supplier_id() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Supplier", 
+								"id",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Supplier_catalogVersion() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Supplier", 
+								"catalogVersion",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Supplier_name() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Supplier", 
+								"name",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
 						public void single_setAttributeProperties_Customer_status() throws JaloBusinessException
 						{
 							
